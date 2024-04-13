@@ -12,12 +12,7 @@ export const processExcel = (file: File, setFileData: (data: any) => void) => {
     // Define what you want to process
     const modifiedData = addProcessResultColumns(originalData)
 
-    const newWorkbook = XLSX.utils.book_new()
-    const newWorksheet = XLSX.utils.aoa_to_sheet(modifiedData)
-    XLSX.utils.book_append_sheet(newWorkbook, newWorksheet, sheetName)
-    const newExcelData = XLSX.write(newWorkbook, { type: 'array', bookType: 'xlsx' })
-    const newExcelFile = new Blob([newExcelData], { type: 'application/octet-stream' })
-    setFileData(newExcelFile)
+    setFileData(modifiedData)
   }
   reader.readAsArrayBuffer(file)
 }
@@ -25,22 +20,30 @@ export const processExcel = (file: File, setFileData: (data: any) => void) => {
 function addProcessResultColumns(originalData: any[]): any[] {
   return originalData.map((row: any, index: number) => {
     if (index === 0) {
-      row.push('Sum Results', 'Divide Results', 'Multiply Results');
+      row.push('Sum Results', 'Divide Results', 'Multiply Results')
     } else {
-      const sum = row[0] + row[1];
-      const divide = row[0] / row[1];
-      const multiply = row[0] * row[1];
-      row.push(sum, divide, multiply);
+      const sum = row[0] + row[1]
+      const divide = row[0] / row[1]
+      const multiply = row[0] * row[1]
+      row.push(sum, divide, multiply)
     }
-    return row;
-  });
+    return row
+  })
 }
 
-export const downloadExcel = (fileData: any) => {
-  const url = window.URL.createObjectURL(new Blob([fileData]))
+export const downloadExcel = (modifiedData: any[], excelTitle: string) => {
+  const newWorkbook = XLSX.utils.book_new()
+  const newWorksheet = XLSX.utils.aoa_to_sheet(modifiedData)
+  XLSX.utils.book_append_sheet(newWorkbook, newWorksheet, 'Sheet1')
+
+  const newExcelData = XLSX.write(newWorkbook, { type: 'array', bookType: 'xlsx' })
+  const newExcelFile = new Blob([newExcelData], { type: 'application/octet-stream' })
+
+  const url = window.URL.createObjectURL(newExcelFile)
   const link = document.createElement('a')
   link.href = url
-  link.setAttribute('download', 'modified.xlsx')
+  link.setAttribute('download', excelTitle)
+
   document.body.appendChild(link)
   link.click()
 }

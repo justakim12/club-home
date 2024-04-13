@@ -26,20 +26,37 @@ const App: React.FC = () => {
     processExcel(file, setFileData)
   }
 
+  const handleDownloadSampleExcel = () => {
+    const sampleData = [
+      ['First', 'Second'],
+      [4, 2],
+      [1, 2],
+      [1, 2],
+      [2, 2],
+      [5, 6]
+    ]
+    downloadExcel(sampleData, 'sample.xlsx')
+  }
+
   return (
     <>
+      <div className="download-button-container">
+        <Button type="primary" onClick={handleDownloadSampleExcel}>
+          Download Sample Excel
+        </Button>
+      </div>
       <Dragger {...props} beforeUpload={handleExcelUpload}>
         <p className="ant-upload-drag-icon">
           <InboxOutlined />
         </p>
         <p className="ant-upload-text">
-          Click or drag file to this area to upload
+          Click or drag excel file to this area to upload
         </p>
         <p className="ant-upload-hint">Support for a single excel</p>
       </Dragger>
       <div className="download-button-container">
         {fileData && (
-          <Button type="primary" onClick={() => downloadExcel(fileData)}>
+          <Button type="primary" onClick={() => downloadExcel(fileData, 'modified.xlsx')}>
             Download Modified Excel
           </Button>
         )}
