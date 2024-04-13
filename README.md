@@ -1,46 +1,16 @@
-# Getting Started with Create React App
+## Auto Excel Changer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- This project was created with React and is a site to automatically change an excel file that is uploaded.
+- You can download your modified excel file after it has been automatically modified. 
 
-## Available Scripts
 
-In the project directory, you can run:
+## Dev Descriptions
+- `npm start` will run your app in your development mode.
+- It was deployed from https://render.com/
+- Site URL: https://auto-excel-changer.onrender.com
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Preview
+<img width="1728" alt="image" src="https://github.com/justakim12/auto-excel-changer/assets/40204699/cbe0959a-823c-48a1-988d-40dfeb7e5584">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
