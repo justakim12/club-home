@@ -11,6 +11,7 @@
 
 
 ## Preview
-<img width="1728" alt="image" src="https://github.com/justakim12/auto-excel-changer/assets/40204699/cbe0959a-823c-48a1-988d-40dfeb7e5584">
+![image](https://github.com/justakim12/auto-excel-changer/assets/40204699/23a233ad-1794-4803-8852-c90c5129222b)
+
 
 
