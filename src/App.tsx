@@ -52,7 +52,7 @@ const App: React.FC = () => {
         <p className="ant-upload-text">
           Click or drag a single excel file to this area to upload
         </p>
-        <p className="ant-upload-hint">This site with add, divide, and multiply the first two columns of your excel</p>
+        <p className="ant-upload-hint">This site will add, divide, and multiply the first two columns of your excel</p>
         <p className="ant-upload-hint">The excel is only processed and the data is not saved anywhere</p>
       </Dragger>
       <div className="download-button-container">
